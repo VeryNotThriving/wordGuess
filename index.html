@@ -29,6 +29,7 @@
             var questionIndex = 0;
             var wins = 0;
             var guessesRemain = 10;
+<<<<<<< HEAD
             var lettersGuessed = []
             var directionsText = document.getElementById("directions-text");
             var numRemaingText = document.getElementById("numRemaining-text"+"Number of Guesses Remaining:"+" "+guessesRemain);
@@ -37,6 +38,11 @@
             
             
 
+=======
+            var lettersGuessed = "";
+//             I'm not sure how well these funcitons work since I copy pasted them but if your going to use them you have to make sure to
+//         add a questionsindex variable and a score variable along with a quesitonsindex id tag  and score in your divs 
+>>>>>>> f84075a0058206f30837b7765965fdc778e6f5b1
             function renderQuestion() {
             if (questionIndex <= (questions.length - 1)) {
                 document.querySelector("#question-text").innerHTML = questions[questionIndex].q;
