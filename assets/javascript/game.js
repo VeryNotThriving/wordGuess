@@ -1,8 +1,16 @@
-var questions = [
-    {q: "_ _ _ _ _", a1:"a", a2:"p", a3:"p", a4:"l", a5:"e"}, {q: "_ _ _ _ _ _", a1:"b", a2:"l", a3:"o", a4:"n", a5:"d", a6:"e"}, {q: "_ _ _ _", a1:"r", a2:"a", a3:"c", a4:"e"}
+var answers = [
+    {q:"_ _ _ _ _",
+    q1:"_", q2:"_", q3:"_", q4:"_", q5:"_", 
+    a1:"a", a2:"p", a3:"p", a4:"l", a5:"e"},
+    {q:"_ _ _ _ _ _",
+    q1:"_", q2:"_", q3:"_", q4:"_", q5:"_", q6:"_",
+    a1:"b", a2:"l", a3:"o", a4:"n", a5:"d", a6:"e"}, 
+    {q:"_ _ _ _",
+    q1:"_", q2:"_", q3:"_", q4:"_",
+    a1:"r", a2:"a", a3:"c", a4:"e"}
 ]
 var score = 0;
-var i=0;
+var question=0;
 var questionIndex = 0;
 var wins = 0;
 var guessesRemain = 10;
@@ -39,27 +47,21 @@ return;
 }
 
 console.log(userGuess);
-
 directionsText.textContent = "";
 
 
 
-if (i = 0) {
-    var userGuess = event.key;
-    lettersGuessed.push(userGuess)
-    
-    i++
-}
-
-if (questions.includes(userGuess)){
+if (questions[i].includes(userGuess)){
     alert("included")
+    answers.q[question].push(userGuess)
+    question++
+    
 }
 else {
     alert("keep trying")
-    score++
 }
 
 numRemaingText.textContent = "Guesses Left: "+guessesRemain;
 lettersGuessedText.textContent = "Letters Already Guessed: "+lettersGuessed[0];
-
+renderQuestion();
 }
