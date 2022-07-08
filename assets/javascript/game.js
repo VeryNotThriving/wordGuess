@@ -8,7 +8,7 @@ var wins = 0;
 var guessesRemain = 10;
 var lettersGuessed = []
 var directionsText = document.getElementById("directions-text");
-var numRemaingText = document.getElementById("numRemaining-text"+"Number of Guesses Remaining:"+" "+guessesRemain);
+var numRemaingText = document.getElementById("numRemaining-text");
 var questionText = document.getElementById("question-text");
 var lettersGuessedText = document.getElementById("lettersGuessed-text")
 
@@ -32,6 +32,8 @@ renderQuestion();
 updateScore();
 
 document.onkeyup = function(event) {
+var userGuess = event.key;
+
 if (questionIndex === questions.length) {
 return;
 }
@@ -49,10 +51,10 @@ if (i = 0) {
     i++
 }
 
-if (questions.includes(userGuess) === true){
+if (questions.includes(userGuess)){
     alert("included")
 }
-else if(questions.includes(userGuess) === false) {
+else {
     alert("keep trying")
     score++
 }
